@@ -122,6 +122,14 @@ body{
         display: grid;
         grid-template-rows: repeat(6, 200px);
         grid-template-columns: 1fr;
+        grid-template-areas: 
+        "c1"
+        "c3"
+        "c4"
+        "c2"
+        "c5"
+        "c6"
+        ;
     }
 
     .card:nth-child{
