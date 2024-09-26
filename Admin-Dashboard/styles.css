@@ -12,7 +12,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
     font-family: "Poppins", sans-serif;
 }
 
@@ -20,12 +19,12 @@ body{
 .container{
     display: grid;
     grid-template-rows: 70px 1fr;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main"
     ;
-    height: inherit;
+    height: 100vh;
 }
 
 .header{
@@ -36,6 +35,7 @@ body{
 .sidebar{
     background-color: var(--primary-color);
     grid-area: sidebar;
+    height: 100%;
 }
 
 .main{
@@ -51,6 +51,7 @@ body{
      "c4 c5 c6"
      ;
      padding: 10px;
+     height: 100%;
 }
 
 .card{
@@ -199,6 +200,16 @@ ul li .profile{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    height: 100%;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    overflow: hidden;
 }
 
 .side-logo{
@@ -257,8 +268,8 @@ aside .menu-items i {
 }
 
 .sales-card .fa-chart-line{
-    height: 15px !important;
-    width: 15px !important;
+    height: 15px ;
+    width: 15px ;
 }
 
 .sales-card div:nth-child(2){
@@ -338,3 +349,51 @@ aside .menu-items i {
     font-weight: bold;
     font-size: 0.9rem;
 }
+
+/* Chart */
+.card .chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: max-content;
+    box-sizing: border-box;
+}
+
+.card span {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+   font-weight: 500;
+   font-size: 1.2rem;
+}
+
+.card .chart .chart-1, 
+.card .chart .chart-2 {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .chart .chart-1 img, 
+.card .chart .chart-2 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: auto;
+}
+
+.card .chart .chart-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .card .chart-1 p {
+        display: none;
+    }
+}
+
